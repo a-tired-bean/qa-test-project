@@ -9,7 +9,7 @@ Project for simulating QA tests setup and maintenance.
 ### First Time Setup
 ```
 python3 -m pip install -r requirements.txt
-playwright install-dep
+playwright install-deps
 playwright install
 ```
 
