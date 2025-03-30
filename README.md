@@ -3,15 +3,20 @@ Project for simulating QA tests setup and maintenance.
 
 ## Development Notes
 ### Requirements
+* Maven 3.6.3
 * Python 3.10.12
 
 ### First Time Setup
-`python3 -m pip install -r requirements.txt`
+```
+python3 -m pip install -r requirements.txt
+playwright install-dep
+playwright install
+```
 
 ### Test Execution
-* Execute all tests: `behave`
-* Execute specific tests: `behave -i {feature_filename_pattern}`
-* Execute all excluding specific tests: `behave -e {feature_filename_pattern}`
+* Execute all tests: `mvn test`
+  * Add `-Dinclude={feature_filename_pattern}` to specify feature files to include.
+  * Add `-Dexclude={feature_filename_pattern}` to specify feature files to exclude.
 
 ### Contribution
 #### Adding a Feature
