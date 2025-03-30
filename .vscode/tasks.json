@@ -10,6 +10,7 @@
       },
       "command": [
         "python3 -m pip install -r ${workspaceFolder}/requirements.txt &&",
+        "playwright install-deps &&",
         "playwright install"
       ],
       "problemMatcher": [],
@@ -22,7 +23,7 @@
         "kind": "build"
       },
       "command": [
-        "behave"
+        "mvn test"
       ],
       "problemMatcher": [],
     },
@@ -34,7 +35,7 @@
         "kind": "build"
       },
       "command": [
-        "behave -i ${input:test_name_pattern}"
+        "mvn test -Dinclude=${input:test_name_pattern}"
       ],
       "problemMatcher": [],
     },
@@ -46,7 +47,7 @@
         "kind": "build"
       },
       "command": [
-        "behave -e ${input:test_name_pattern}"
+        "mvn test -Dexclude=${input:test_name_pattern}"
       ],
       "problemMatcher": [],
     }
