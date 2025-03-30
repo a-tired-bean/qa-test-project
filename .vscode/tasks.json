@@ -6,14 +6,56 @@
       "type": "shell",
       "detail": "Setup repository for development.",
       "group": {
-        "kind": "build",
-        "isDefault": true
+        "kind": "build"
       },
       "command": [
         "python3 -m pip install -r ${workspaceFolder}/requirements.txt &&",
         "playwright install"
       ],
       "problemMatcher": [],
+    },
+    {
+      "label": "Run Tests (All)",
+      "type": "shell",
+      "detail": "Execute all tests.",
+      "group": {
+        "kind": "build"
+      },
+      "command": [
+        "behave"
+      ],
+      "problemMatcher": [],
+    },
+    {
+      "label": "Run Tests (Include Matches)",
+      "type": "shell",
+      "detail": "Execute matching tests.",
+      "group": {
+        "kind": "build"
+      },
+      "command": [
+        "behave -i ${input:test_name_pattern}"
+      ],
+      "problemMatcher": [],
+    },
+    {
+      "label": "Run Tests (Exclude Matches)",
+      "type": "shell",
+      "detail": "Execute tests that do not match.",
+      "group": {
+        "kind": "build"
+      },
+      "command": [
+        "behave -e ${input:test_name_pattern}"
+      ],
+      "problemMatcher": [],
+    }
+  ],
+  "inputs": [
+    {
+      "id": "test_name_pattern",
+      "type": "promptString",
+      "description": "Test name's pattern."
     }
   ]
 }
