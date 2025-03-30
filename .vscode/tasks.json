@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Setup",
+      "type": "shell",
+      "detail": "Setup repository for development.",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "command": [
+        "python3 -m pip install -r ${workspaceFolder}/requirements.txt &&",
+        "playwright install"
+      ],
+      "problemMatcher": [],
+    }
+  ]
+}
