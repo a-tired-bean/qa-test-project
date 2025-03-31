@@ -1,5 +1,6 @@
 package kiwi;
 
+import java.io.File;
 import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
@@ -20,6 +21,7 @@ public class BehaveTest {
       command.add(excludeTests);
     }
     ProcessBuilder processBuilder = new ProcessBuilder(command);
+    processBuilder.directory(new File("src/test/resources/kiwi"));
     processBuilder.redirectErrorStream(true);
     processBuilder.redirectOutput(ProcessBuilder.Redirect.INHERIT);
     try {
